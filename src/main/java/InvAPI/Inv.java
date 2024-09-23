@@ -131,6 +131,7 @@ public class Inv {
         ItemStack head = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) head.getItemMeta();
         meta.setOwnerProfile(profile);
+        meta.setDisplayName(name);
         meta.setLore(lore);
         head.setItemMeta(meta);
         return head;
