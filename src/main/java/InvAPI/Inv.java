@@ -82,6 +82,17 @@ public class Inv {
             listeners.put(item, code);
         }
     }
+    public void createItem(ItemStack itemStack, String name, Integer invzahl, List<String> lore, Code code) {
+        ItemMeta meta = itemStack.getItemMeta();
+        meta.setDisplayName(name);
+        meta.setLore(lore);
+        itemStack.setItemMeta(meta);
+        inv.setItem(invzahl, itemStack);
+
+        if (code != null) {
+            listeners.put(itemStack, code);
+        }
+    }
     public void createItemEnchant(Material material, String name, Integer invzahl, List<String> lore, Code code) {
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
